@@ -1,0 +1,13 @@
+{
+  "description": "Military ICAO hex codes for ADS-B filtering",
+  "version": "1.0.0",
+  "last_updated": "2026-05-15",
+  "notes": "Add ICAO codes for military aircraft to filter from public ADS-B feeds",
+  "icao_codes": [
+    "A1B2C3",
+    "D4E5F6",
+    "G7H8I9",
+    "J0K1L2"
+  ],
+  "source": "https://www.icao.int/publications/DOC8643/Pages/default.aspx"
+}

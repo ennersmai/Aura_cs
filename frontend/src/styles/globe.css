@@ -1,0 +1,348 @@
+/* Project Panopticon - Global Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #0a0a0a;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* App Layout */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid #333;
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.connection-status.connected {
+  color: #4ade80;
+}
+
+.connection-status.connecting {
+  color: #facc15;
+}
+
+.connection-status.disconnected {
+  color: #ef4444;
+}
+
+.app-main {
+  flex: 1;
+  position: relative;
+}
+
+.app-controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 300px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+/* Globe Container */
+.globe-container {
+  width: 100%;
+  height: 100%;
+}
+
+.globe {
+  width: 100%;
+  height: 100%;
+}
+
+/* Layer Panel */
+.layer-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.layer-panel h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.layer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.layer-item {
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #333;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.layer-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #555;
+}
+
+.layer-item.active {
+  background: rgba(74, 222, 128, 0.1);
+  border-color: #4ade80;
+}
+
+.layer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.layer-name {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.layer-status {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.layer-item.active .layer-status {
+  color: #4ade80;
+}
+
+.layer-description {
+  font-size: 0.75rem;
+  color: #aaa;
+  line-height: 1.4;
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.timeline h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.timeline-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timeline-controls label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.timeline-controls input {
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #fff;
+  font-family: inherit;
+}
+
+.timeline-controls input:focus {
+  outline: none;
+  border-color: #4ade80;
+}
+
+.timeline-info {
+  font-size: 0.75rem;
+  color: #888;
+  line-height: 1.4;
+}
+
+/* Entity Card */
+.entity-card {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  width: 360px;
+  max-height: 500px;
+  background: rgba(10, 10, 20, 0.95);
+  border: 1px solid #4ade80;
+  border-radius: 12px;
+  backdrop-filter: blur(16px);
+  overflow: hidden;
+  z-index: 100;
+  animation: slideUp 0.3s ease-out;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.entity-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 1.25rem;
+  background: rgba(74, 222, 128, 0.1);
+  border-bottom: 1px solid #333;
+}
+
+.entity-card-header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4ade80;
+  margin: 0;
+  word-break: break-word;
+  line-height: 1.3;
+}
+
+.entity-card-close {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+.entity-card-close:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.entity-card-body {
+  padding: 1rem 1.25rem;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.entity-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.entity-detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.entity-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #666;
+  font-weight: 600;
+}
+
+.entity-value {
+  font-size: 0.875rem;
+  color: #ddd;
+  line-height: 1.4;
+}
+
+.entity-value.mono {
+  font-family: 'Consolas', 'Courier New', monospace;
+  color: #4ade80;
+  font-size: 0.9rem;
+}
+
+.entity-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid #333;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.entity-type-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4ade80;
+}
+
+.entity-id-badge {
+  font-size: 0.65rem;
+  color: #555;
+}
+
+.entity-id-badge.mono {
+  font-family: 'Consolas', 'Courier New', monospace;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.25rem;
+  }
+
+  .app-controls {
+    width: 100%;
+    top: auto;
+    right: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}

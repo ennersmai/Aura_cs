@@ -1,0 +1,49 @@
+# ============================================================================
+# Project Panopticon - Python Dependencies
+# ============================================================================
+
+# Web Framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.6
+
+# Database
+surrealdb>=0.12.0
+sqlalchemy>=2.0.0
+
+# Message Broker
+nats-py>=0.1.0
+
+# HTTP Client
+httpx>=0.27.0
+aiohttp>=3.9.0
+
+# WebSocket
+websockets>=12.0
+
+# Environment
+python-dotenv>=1.0.0
+
+# Data Validation
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# Browser Automation (Phase 2)
+playwright>=1.45.0
+
+# Utilities
+python-dateutil>=2.8.0
+pytz>=2023.3
+
+# Logging
+structlog>=24.0.0
+
+# CORS
+fastapi-cors>=0.0.6
+
+# Testing (Phase 3)
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+pytest-mock>=3.12.0
+pytest-cov>=4.1.0
+httpx>=0.27.0
